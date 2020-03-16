@@ -5,17 +5,17 @@ using UnityEngine;
 public class InteractiveObject : MonoBehaviour, IInteractive
 {
     [SerializeField]
-    private string displayText = nameof(InteractiveObject);
+    protected string displayText = nameof(InteractiveObject);
 
     public string DisplayText => displayText;
     private AudioSource audioSource;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void InteractiveWith()
+    public virtual void InteractiveWith()
     {
         if (audioSource != null)
             audioSource.Play();
