@@ -7,6 +7,8 @@ public class InteractiveObject : MonoBehaviour, IInteractive
     [SerializeField]
     protected string displayText = nameof(InteractiveObject);
 
+    // How to display an image?
+
     public virtual string DisplayText => displayText;
     protected AudioSource audioSource;
 
