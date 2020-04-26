@@ -23,6 +23,7 @@ public class LookedAtInteractiveDisplayText : MonoBehaviour
     {
         if (lookedAtInteractive != null)
             displayText.text = lookedAtInteractive.DisplayText;
+
         else
             displayText.text = string.Empty;
     }
@@ -31,7 +32,7 @@ public class LookedAtInteractiveDisplayText : MonoBehaviour
     /// Event handler for DetectLookedAtInteractive.LookedAtInteractiveChanged
     /// </summary>
     /// <param name="newLookedAtInteractive">Refrence to the new IInteractive the player is looking at</param>
-    
+
     private void OnLookedAtInteractiveChanged(IInteractive newLookedAtInteractive)
     {
         lookedAtInteractive = newLookedAtInteractive;
