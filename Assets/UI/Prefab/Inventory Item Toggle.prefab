@@ -83,6 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4319107167126067929}
   - component: {fileID: 4319107167126067928}
+  - component: {fileID: 852193953427778460}
   m_Layer: 5
   m_Name: Inventory Item Toggle
   m_TagString: Untagged
@@ -158,6 +159,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!114 &852193953427778460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4319107167126067934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f6e00ad49391a4a91af378710e90f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconImage: {fileID: 808615850}
 --- !u!1 &4319107167175035706
 GameObject:
   m_ObjectHideFlags: 0

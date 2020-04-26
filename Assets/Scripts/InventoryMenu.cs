@@ -5,6 +5,9 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class InventoryMenu : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject inventoryMenuItemTogglePrefab;
+
     private static InventoryMenu instance;
     private CanvasGroup canvasGroup;
     private FirstPersonController firstPersonController;
@@ -27,6 +30,15 @@ public class InventoryMenu : MonoBehaviour
     public void ExitMenuButtonClicked()
     {
         HideMenu();
+    }
+
+    /// <summary>
+    /// Instantiates a new InventoryMenuItemToggle prefab and adds it to the menu
+    /// </summary>
+    /// <param name="inventoryObjecToAdd"></param>
+    public void AddItemToMenu(InventoryObject inventoryObjecToAdd)
+    {
+        Instantiate(inventoryMenuItemTogglePrefab);
     }
 
     private void ShowMenu()
