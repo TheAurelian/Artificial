@@ -7,7 +7,6 @@ using UnityEngine.UI;
 /// This UI text displays info about the currently looked at interactive IInteractive
 /// Text should be hidden if the player is not currently looking at an interactive element
 /// </summary>
-
 public class LookedAtInteractiveDisplayText : MonoBehaviour
 {
     private IInteractive lookedAtInteractive;
@@ -32,7 +31,6 @@ public class LookedAtInteractiveDisplayText : MonoBehaviour
     /// Event handler for DetectLookedAtInteractive.LookedAtInteractiveChanged
     /// </summary>
     /// <param name="newLookedAtInteractive">Refrence to the new IInteractive the player is looking at</param>
-
     private void OnLookedAtInteractiveChanged(IInteractive newLookedAtInteractive)
     {
         lookedAtInteractive = newLookedAtInteractive;

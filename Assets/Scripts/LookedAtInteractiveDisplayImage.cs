@@ -9,7 +9,6 @@ using UnityEngine.UI;
 /// This UI text displays the image underline beneath the text
 /// Image souldn't display if there is no text
 /// </summary>
-
 public class LookedAtInteractiveDisplayImage : MonoBehaviour
 {
     private IInteractive lookedAtInteractive;
@@ -38,7 +37,6 @@ public class LookedAtInteractiveDisplayImage : MonoBehaviour
     /// Event handler for DetectLookedAtInteractive.LookedAtInteractiveChanged
     /// </summary>
     /// <param name="newLookedAtInteractive">Refrence to the new IInteractive the player is looking at</param>
-
     private void OnLookedAtInteractiveChanged(IInteractive newLookedAtInteractive)
     {
         lookedAtInteractive = newLookedAtInteractive;

@@ -39,7 +39,6 @@ public class InventoryObject : InteractiveObject
     /// When the player interacts with an invetory object; 
     /// Add inventory object to playerinventory list and remove from the object from the game world without destroying it (disable collider and renderer)
     /// </summary>
-
     public override void InteractiveWith()
     {
         base.InteractiveWith();

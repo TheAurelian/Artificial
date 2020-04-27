@@ -6,7 +6,6 @@ using UnityEngine;
 /// Detects when the player presses the interact button while looking at an IInteractive,
 /// and then calls the Innteractive's interactwith method
 /// </summary>
-
 public class InteractiveWithLookedAt : MonoBehaviour
 {
     private IInteractive lookedAtInteractive;
@@ -23,8 +22,7 @@ public class InteractiveWithLookedAt : MonoBehaviour
     /// <summary>
     /// Event handler for DetectLookedAtInteractive.LookedAtInteractiveChanged
     /// </summary>
-    /// <param name="newLookedAtInteractive">Refrence to the new IInteractive the player is looking at</param>
-    
+    /// <param name="newLookedAtInteractive">Refrence to the new IInteractive the player is looking at</param> 
     private void OnLookedAtInteractiveChanged(IInteractive newLookedAtInteractive)
     {
         lookedAtInteractive = newLookedAtInteractive;

@@ -8,7 +8,6 @@ public class LoadScene : InteractiveObject
     /// <summary>
     /// Using a constructor here to initialize displayText in the editor
     /// </summary> 
-    /// 
     [Tooltip("Name of the scene to be loaded")]
     [SerializeField]
     protected string sceneName;
