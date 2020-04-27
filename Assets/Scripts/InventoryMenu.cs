@@ -81,13 +81,11 @@ public class InventoryMenu : MonoBehaviour
     /// </summary>
     private void OnInventoryMenuItemSelected(InventoryObject inventoryObjectThatWasSelected)
     {
-        Debug.Log("Updating text");
         itemLabelText.text = inventoryObjectThatWasSelected.ObjectName;
         descriptionAreaText.text = inventoryObjectThatWasSelected.Description;
-        Debug.Log("text updated");
     }
 
-    private void OnEnabled()
+    private void OnEnable()
     {
         InventoryMenuItemToggle.InventoryMenuItemSelected += OnInventoryMenuItemSelected;
     }

@@ -28,17 +28,12 @@ public class InventoryMenuItemToggle : MonoBehaviour
     /// </summary>
     public void InventoryMenuItemWasToggled(bool isOn)
     {
+        Debug.Log($"Toggled: {isOn}");
         if (isOn)
             InventoryMenuItemSelected?.Invoke(AssociatedInventoryObject);
 
-        // Why is this returning as Null???
-
         if (InventoryMenuItemSelected == null)
-        {
             Debug.Log("InventoryMenuItemSelected is null");
-        }
-        Debug.Log($"Toggled: {isOn}");
-
     }
 
     private void Awake()
