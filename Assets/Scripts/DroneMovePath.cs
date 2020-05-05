@@ -8,6 +8,10 @@ public class DroneMovePath : MonoBehaviour
     [SerializeField]
     private int movementSpeed;
 
+    [Tooltip("The movement time of the drone")]
+    [SerializeField]
+    private int movementTime;
+
     private void Start()
     {
         StartCoroutine(Begin());
@@ -16,7 +20,7 @@ public class DroneMovePath : MonoBehaviour
     IEnumerator Begin()
     {
         float time = 1;
-        while (time > 0) 
+        while (time > 0)
         {
             StartCoroutine(DroneMovement());
             yield return new WaitForSeconds(10);
@@ -26,10 +30,10 @@ public class DroneMovePath : MonoBehaviour
     IEnumerator DroneMovement()
     {
         float timePassed = 0;
-        while (timePassed < 7)
+        while (timePassed < movementTime)
         {
             transform.Translate(Vector3.left * Time.deltaTime * movementSpeed);
-            Debug.Log("Drone is moving left");
+            // Debug.Log("Drone is moving left");
             timePassed += Time.deltaTime;
 
             yield return null;
