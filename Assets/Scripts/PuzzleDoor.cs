@@ -116,7 +116,7 @@ public class PuzzleDoor : InteractiveObject
             {
                 if (puzzlePieceB.transform.rotation.eulerAngles.y == 0)
                 {
-                    if (puzzlePieceC.transform.rotation.eulerAngles.y == 90 || puzzlePieceC.transform.rotation.eulerAngles.y == 90.00001)
+                    if (puzzlePieceC.transform.rotation.eulerAngles.y == 90 || puzzlePieceC.transform.rotation.eulerAngles.y == -90.00001)
                     {
                         if (puzzlePieceD.transform.rotation.eulerAngles.y == 180)
                         {
@@ -124,7 +124,7 @@ public class PuzzleDoor : InteractiveObject
                             {
                                 if (puzzlePieceF.transform.rotation.eulerAngles.y == 0)
                                 {
-                                    if (puzzlePieceG.transform.rotation.eulerAngles.y == 90 || puzzlePieceG.transform.rotation.eulerAngles.y == 90.00001)
+                                    if (puzzlePieceG.transform.rotation.eulerAngles.y == 90 || puzzlePieceG.transform.rotation.eulerAngles.y == -90.00001)
                                     {
                                         Debug.Log("Puzzle correct");
 
@@ -186,7 +186,7 @@ public class PuzzleDoor : InteractiveObject
         {
             if (puzzlePieceB.transform.rotation.eulerAngles.y == 0)
             {
-                if (puzzlePieceC.transform.rotation.eulerAngles.y == 90 || puzzlePieceC.transform.rotation.eulerAngles.y == 90.00001)
+                if (puzzlePieceC.transform.rotation.eulerAngles.y == 90 || puzzlePieceC.transform.rotation.eulerAngles.y == -90.00001)
                 {
                     if (puzzlePieceD.transform.rotation.eulerAngles.y == 180)
                     {

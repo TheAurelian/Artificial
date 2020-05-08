@@ -12,6 +12,10 @@ public class DroneMovePath : MonoBehaviour
     [SerializeField]
     private int movementTime;
 
+    [Tooltip("How long to wait before moving again")]
+    [SerializeField]
+    private int waitTime;
+
     private void Start()
     {
         StartCoroutine(Begin());
@@ -23,7 +27,7 @@ public class DroneMovePath : MonoBehaviour
         while (time > 0)
         {
             StartCoroutine(DroneMovement());
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(waitTime);
         }
     }
 
@@ -33,7 +37,7 @@ public class DroneMovePath : MonoBehaviour
         while (timePassed < movementTime)
         {
             transform.Translate(Vector3.left * Time.deltaTime * movementSpeed);
-            // Debug.Log("Drone is moving left");
+            // Debug.Log("Drone is moving");
             timePassed += Time.deltaTime;
 
             yield return null;

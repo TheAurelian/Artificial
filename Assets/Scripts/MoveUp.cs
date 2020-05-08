@@ -12,6 +12,10 @@ public class MoveUp : MonoBehaviour
     [SerializeField]
     private int movementTime;
 
+    [Tooltip("How long to wait before moving again")]
+    [SerializeField]
+    private int waitTime;
+
     private void Start()
     {
         StartCoroutine(Begin());
@@ -23,7 +27,7 @@ public class MoveUp : MonoBehaviour
         while (time > 0)
         {
             StartCoroutine(PlatformUp());
-            yield return new WaitForSeconds(14);
+            yield return new WaitForSeconds(waitTime);
         }
     }
 
