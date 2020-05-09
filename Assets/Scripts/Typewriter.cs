@@ -8,7 +8,7 @@ public class Typewriter : MonoBehaviour
     Text text;
     string storyText;
 
-    private void Awake()
+    private void OnEnable()
     {
         text = GetComponent<Text>();
         storyText = text.text;

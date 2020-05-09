@@ -33,7 +33,7 @@ public class MoveUp : MonoBehaviour
 
     IEnumerator PlatformUp()
     {
-        Debug.Log("Platform Up");
+        // Debug.Log("Platform Up");
         float timePassed = 0;
         while (timePassed < movementTime)
         {
@@ -47,7 +47,7 @@ public class MoveUp : MonoBehaviour
 
     IEnumerator PlatformDown()
     {
-        Debug.Log("Platform Down");
+        // Debug.Log("Platform Down");
         float timePassed = 0;
         while (timePassed < movementTime)
         {

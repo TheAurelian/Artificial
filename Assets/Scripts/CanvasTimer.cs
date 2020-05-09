@@ -5,17 +5,18 @@ using UnityEngine.UI;
 
 public class CanvasTimer : MonoBehaviour
 {
-    public GameObject introCanvas;
+    [SerializeField]
+    private float waitTime;
 
-    private void Start()
+    private void OnEnable()
     {
         StartCoroutine(Timer());
     }
 
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(5);
-        introCanvas.gameObject.SetActive(false);
+        yield return new WaitForSeconds(waitTime);
+        gameObject.SetActive(false);
         Debug.Log("Canvas should vanish");
     }
 }
