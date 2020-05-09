@@ -1019,10 +1019,9 @@ MonoBehaviour:
 
     Assets: Mash Virtual, D.F.Y. Studio, 256  PX, Sergeyiwanski, Archanor VFX, Firebolt
     Studios, Vladimir Tim, Neutroncat, Karboosx, Daelonik Artworks, Midaem, Pixcess,
-    xiaolianhuastudio, and Epic Sounds and FX
+    xiaolianhuastudio, Martin Sureda, Assetbag, and Epic Sounds and FX
 
-
-    Fonts: Revamped by Chequered Ink, Acquire by Sesohq, and Spantaran by Nurf Designs'
+    Fonts: Chequered Ink, Sesohq, and Nurf Designs'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d5d36b99f9d706e4a8b3511c05041e0b, type: 2}
   m_sharedMaterial: {fileID: -3436017274582983452, guid: d5d36b99f9d706e4a8b3511c05041e0b,
