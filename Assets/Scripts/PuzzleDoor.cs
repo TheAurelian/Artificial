@@ -25,6 +25,34 @@ public class PuzzleDoor : InteractiveObject
     [SerializeField]
     private AudioClip openAudioClip;
 
+    [SerializeField]
+    private GameObject puzzlePieceA;
+
+    [SerializeField]
+    private GameObject puzzlePieceB;
+
+    [SerializeField]
+    private GameObject puzzlePieceC;
+
+    [SerializeField]
+    private GameObject puzzlePieceD;
+
+    [SerializeField]
+    private GameObject puzzlePieceE;
+
+    [SerializeField]
+    private GameObject puzzlePieceF;
+
+    [SerializeField]
+    private GameObject puzzlePieceG;
+
+    [SerializeField]
+    private GameObject greenLight;
+
+    [SerializeField]
+    private GameObject redLight;
+
+
     // public override string DisplayText => isLocked ? lockedDisplayText : base.DisplayText;
 
     public override string DisplayText
@@ -58,6 +86,11 @@ public class PuzzleDoor : InteractiveObject
         displayText = nameof(Door);
     }
 
+    private void Update()
+    {
+        PuzzleCheck();
+    }
+
     protected override void Awake()
     {
         base.Awake();
@@ -79,16 +112,63 @@ public class PuzzleDoor : InteractiveObject
             {
                 audioSource.clip = lockedAudioClip;
             }
-            else // If it's not locked or if it's locked and we have the key
+            if (puzzlePieceA.transform.rotation.eulerAngles.y == 0 || puzzlePieceA.transform.rotation.eulerAngles.y == 180)
             {
-                audioSource.clip = openAudioClip;
-                animator.SetBool("shouldOpen", true);
-                displayText = string.Empty;
-                isOpen = true;
-                UnlockDoor();
-            }
+                if (puzzlePieceB.transform.rotation.eulerAngles.y == 0)
+                {
+                    if (puzzlePieceC.transform.rotation.eulerAngles.y == 90 || puzzlePieceC.transform.rotation.eulerAngles.y == -90.00001)
+                    {
+                        if (puzzlePieceD.transform.rotation.eulerAngles.y == 180)
+                        {
+                            if (puzzlePieceE.transform.rotation.eulerAngles.y == 0 || puzzlePieceE.transform.rotation.eulerAngles.y == 180)
+                            {
+                                if (puzzlePieceF.transform.rotation.eulerAngles.y == 0)
+                                {
+                                    if (puzzlePieceG.transform.rotation.eulerAngles.y == 90 || puzzlePieceG.transform.rotation.eulerAngles.y == -90.00001)
+                                    {
+                                        Debug.Log("Puzzle correct");
 
-            // This plays the sound effect
+                                        audioSource.clip = openAudioClip;
+                                        animator.SetBool("shouldOpen", true);
+                                        displayText = string.Empty;
+                                        isOpen = true;
+                                        UnlockDoor();
+
+                                    }
+                                    else
+                                    {
+                                        audioSource.clip = lockedAudioClip;
+                                    }
+                                }
+                                else
+                                {
+                                    audioSource.clip = lockedAudioClip;
+                                }
+                            }
+                            else
+                            {
+                                audioSource.clip = lockedAudioClip;
+                            }
+                        }
+                        else
+                        {
+                            audioSource.clip = lockedAudioClip;
+                        }
+                    }
+                    else
+                    {
+                        audioSource.clip = lockedAudioClip;
+                    }
+                }
+                else
+                {
+                    audioSource.clip = lockedAudioClip;
+                }
+            }
+            else
+            {
+                audioSource.clip = lockedAudioClip;
+            }
             base.InteractiveWith();
         }
     }
@@ -99,4 +179,70 @@ public class PuzzleDoor : InteractiveObject
         if (key != null && consumesKey)
             PlayerInventory.InventoryObjects.Remove(key);
     }
+
+    private void PuzzleCheck()
+    {
+        if (puzzlePieceA.transform.rotation.eulerAngles.y == 0 || puzzlePieceA.transform.rotation.eulerAngles.y == 180)
+        {
+            if (puzzlePieceB.transform.rotation.eulerAngles.y == 0)
+            {
+                if (puzzlePieceC.transform.rotation.eulerAngles.y == 90 || puzzlePieceC.transform.rotation.eulerAngles.y == -90.00001)
+                {
+                    if (puzzlePieceD.transform.rotation.eulerAngles.y == 180)
+                    {
+                        if (puzzlePieceE.transform.rotation.eulerAngles.y == 0 || puzzlePieceE.transform.rotation.eulerAngles.y == 180)
+                        {
+                            if (puzzlePieceF.transform.rotation.eulerAngles.y == 0)
+                            {
+                                if (puzzlePieceG.transform.rotation.eulerAngles.y == 90 || puzzlePieceG.transform.rotation.eulerAngles.y == 90.00001)
+                                {
+                                    redLight.gameObject.SetActive(false);
+                                    greenLight.gameObject.SetActive(true);
+                                }
+                                else
+                                {
+                                    redLight.gameObject.SetActive(true);
+                                    greenLight.gameObject.SetActive(false);
+                                }
+                            }
+                            else
+                            {
+                                redLight.gameObject.SetActive(true);
+                                greenLight.gameObject.SetActive(false);
+                            }
+                        }
+                        else
+                        {
+                            redLight.gameObject.SetActive(true);
+                            greenLight.gameObject.SetActive(false);
+                        }
+                    }
+                    else
+                    {
+                        redLight.gameObject.SetActive(true);
+                        greenLight.gameObject.SetActive(false);
+                    }
+                }
+                else
+                {
+                    redLight.gameObject.SetActive(true);
+                    greenLight.gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                redLight.gameObject.SetActive(true);
+                greenLight.gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            redLight.gameObject.SetActive(true);
+            greenLight.gameObject.SetActive(false);
+        }
+    }
 }
+
+
+
+
